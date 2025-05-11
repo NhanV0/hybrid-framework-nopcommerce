@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite2" verbose="1" >
+
+    <parameter name="url" value="https://datatables.net/examples/data_sources/dom.html"></parameter>
+    <test name="Run on Chrome" >
+        <classes>
+            <parameter name="browser" value="Chrome"></parameter>
+            <class name="com.DataTableExample.DataTableExampleTest"/>
+        </classes>
+    </test>
+
+</suite>

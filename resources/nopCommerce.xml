@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite2" verbose="1" >
+
+    <parameter name="urlUser" value="http://localhost/"></parameter>
+    <parameter name="urlAdmin" value="http://localhost/Admin/"></parameter>
+    <test name="Run on Chrome" >
+        <classes>
+            <parameter name="browser" value="Chrome"></parameter>
+            <class name="com.nopcommerce.users.Level_09_Switch_URL"/>
+        </classes>
+    </test>
+    
+</suite>

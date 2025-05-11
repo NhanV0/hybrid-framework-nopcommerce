@@ -27,24 +27,9 @@ public class Level_01_Register_DRY
     @BeforeClass
     public void beforeClass() throws InterruptedException
     {
-        EdgeOptions edgeOptions = new EdgeOptions();
-        edgeOptions.addArguments("/Users/nhanvo/Library/Application Support/Microsoft Edge/Default");
-        edgeOptions.addArguments("--profile-directory=Profile 1");
-        driver = new EdgeDriver(edgeOptions);
-        driver.get("https://demo.nopcommerce.com/");
-        // Execute JavaScript to open a new tab with the protected website
-        String originalTab = driver.getWindowHandle();
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("window.open('https://someprotectedwebsite', '_blank');");
-        // Wait for 15 seconds (in milliseconds)
-        Thread.sleep(15000);
-        // Switch to the new tab
-        String newTab = driver.getWindowHandles().toArray()[1].toString();
-        driver.switchTo().window(newTab);
-        driver.switchTo().window(originalTab);
-
-
-
+        ChromeOptions chromeOptions = new ChromeOptions();
+        driver = new ChromeDriver(chromeOptions);
+        driver.get("http://localhost");
     }
     @Test
     public void TC_01_Register_Empty_Data() throws InterruptedException
